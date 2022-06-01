@@ -47,7 +47,6 @@ id:                           PK BIGINT AUTO_INCREMENT NOTNULL UNIQUE
 professore_id:                FK NOTNULL 
 studente_id:                  FK NOTNULL
 data:                         DATE NOTNULL INDEX
-voto:                         TINYINT NOTNULL
 note:                         TEXT NULL
 
 ## Studenti
@@ -62,4 +61,12 @@ telefono:                     NOTNULL
 esami_sostenuti:              TINYINT NULL
 esami_da_sostenere:           TINYINT NULL
 cfu_totali:                   SMALLINT NULL
+
+## Voti
+
+id:                           PK BIGINT AUTO_INCREMENT NOTNULL UNIQUE  
+appello_di_esame_id:          FK NOTNULL 
+studente_id:                  FK NOTNULL 
+voto:                         TINYINT NOTNULL
+
 
