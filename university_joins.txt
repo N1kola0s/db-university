@@ -23,11 +23,9 @@ JOIN `departments` ON `degrees`.`department_id` = `departments`.`id`
 WHERE `departments`.`name`= "Dipartimento di Neuroscienze" AND `degrees`.`level`= "magistrale";
 
 3.
-
 SELECT `courses`.`id`,`courses`.`name` FROM `courses` JOIN `course_teacher` ON `course_teacher`.`course_id` = `courses`.`id` WHERE `course_teacher`.`teacher_id` = 44;
 
 4.
-
 SELECT `students`.`id`, `students`.`name`, `students`.`surname`, `degrees`.`name` AS `degrees_name` , `departments`.`name` AS `department_name`
 FROM `students`
 JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id`
