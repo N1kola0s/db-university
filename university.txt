@@ -43,6 +43,11 @@ Query da eseguire:
 	DESCRIBE `students`;
 	SELECT * FROM `students`;
 	SELECT * FROM `students` WHERE YEAR (`date_of_birth`) < 1992;
+
+	//forme più corrette
+	SELECT * FROM `students` WHERE YEAR(CURDATE()) - YEAR(`date_of_birth`) < 30;
+	SELECT * FROM `students` WHERE TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) > 30;
+
 	SELECT Count(id) AS `NumberOfStudents` FROM `students` WHERE YEAR(`date_of_birth`) < 1992;
 
 4.   show tables;
