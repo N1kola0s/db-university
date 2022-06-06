@@ -9,4 +9,29 @@ BONUS: Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per
 
 Soluzione:
 
-1.
+
+1. 
+SELECT `students`.`id` AS `students_id`, `students`.`name` AS `students_name`, `students`.`surname` AS `students_surname`,  `degrees`.`name` AS `degree_name`
+FROM `students` 
+JOIN `degrees` ON `students`.`degree_id`=`degrees`.`id`
+WHERE `degrees`.`name` = "Corso di Laurea in Economia";
+
+2.
+SELECT `degrees`.`id`, `degrees`.`name`, `degrees`.`level`, `departments`.`name`
+FROM `degrees`
+JOIN `departments` ON `degrees`.`department_id` = `departments`.`id`
+WHERE `departments`.`name`= "Dipartimento di Neuroscienze" AND `degrees`.`level`= "magistrale";
+
+3.
+
+SELECT `courses`.`id`,`courses`.`name` FROM `courses` JOIN `course_teacher` ON `course_teacher`.`course_id` = `courses`.`id` WHERE `course_teacher`.`teacher_id` = 44;
+
+4.
+
+SELECT `students`.`id`, `students`.`name`, `students`.`surname`, `degrees`.`name` AS `degrees_name` , `departments`.`name` AS `department_name`
+FROM `students`
+JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id`
+JOIN `departments` ON `departments`.`id` = `degrees`.`department_id`
+ORDER BY `students`.`surname` ASC, `students`.`name` ASC;
+
+5.
